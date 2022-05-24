@@ -132,7 +132,7 @@ function createName() {
       gameContainer.appendChild(characterElement);
     })
 
-    // Remove Character 
+    // Remove Character
     allPlayersRef.on("child_removed", (snapshot) => {
       const removedKey = snapshot.val().id;
       gameContainer.removeChild(playerElements[removedKey]);
@@ -156,7 +156,7 @@ function createName() {
         direction: "right",
         color: randomFromArray(playerColors),
         x: 3,
-        y: 10,
+        y: 4,
         coins: 0,
       })
 
