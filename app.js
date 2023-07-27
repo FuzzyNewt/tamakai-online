@@ -206,3 +206,5 @@ function googleSignOut() {
       console.error("Error signing out:", error);
     });
 }
+// Add a click event listener to the sign-in button
+document.getElementById('google-signin-button').addEventListener('click', googleSignIn);
