@@ -177,3 +177,32 @@ function createName() {
   });
 
 })();
+
+
+
+function googleSignIn() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+    .then((result) => {
+      // This function will be called when the user successfully signs in
+      const user = result.user;
+      console.log("User signed in:", user);
+      // You can redirect or do other tasks here after successful sign-in
+    })
+    .catch((error) => {
+      // Handle sign-in errors here
+      console.error("Error signing in:", error);
+    });
+}
+function googleSignOut() {
+  firebase.auth().signOut()
+    .then(() => {
+      // This function will be called when the user signs out
+      console.log("User signed out");
+      // You can redirect or do other tasks here after successful sign-out
+    })
+    .catch((error) => {
+      // Handle sign-out errors here
+      console.error("Error signing out:", error);
+    });
+}
